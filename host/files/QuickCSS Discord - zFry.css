@@ -1,0 +1,317 @@
+/* === EXTREME PERFORMANCE MODE: CLEAN UI + NO ANIM/AA/BLUR - By zFrxncesck1 === */
+
+/* --- GLOBAL RESET: Disable transitions, animations, visual effects, and layout complexity --- */
+* {
+  transition: none !important;
+  transition-property: none !important;
+  transition-duration: 0s !important;
+  transition-delay: 0s !important;
+  transition-timing-function: linear !important;
+  backdrop-filter: none !important;
+  scroll-behavior: auto !important;
+  scroll-snap-type: none !important;
+  font-variant: normal !important;
+  letter-spacing: normal !important;
+  mix-blend-mode: normal !important;
+  background-blend-mode: normal !important;
+  perspective: none !important;
+  transform-style: flat !important;
+  outline: none !important;
+  text-decoration-skip-ink: none !important;
+  hyphens: none !important;
+  text-shadow: none !important;
+  clip-path: none !important;
+  text-emphasis: none !important;
+  font-kerning: none !important;
+  -webkit-tap-highlight-color: transparent !important;
+  will-change: auto !important;
+  isolation: auto !important;
+  clear: none !important;
+  font-smooth: never !important;
+  image-rendering: -webkit-optimize-contrast !important;
+  shape-rendering: crispEdges !important;
+  text-rendering: optimizeSpeed !important;
+}
+
+/* --- PICTURE IN PICTURE: Restore animation --- */
+*:not(.layerContainer__59d0d *) {
+  animation: none !important;
+  animation-name: none !important;
+  animation-duration: 0s !important;
+  animation-delay: 0s !important;
+  animation-iteration-count: 1 !important;
+  animation-timing-function: linear !important;
+  animation-play-state: paused !important;
+  animation-fill-mode: none !important;
+}
+
+/* --- Visual rendering: fonts, AA, text --- */
+html {
+  text-rendering: optimizeSpeed !important;
+  font-kerning: none !important;
+  -webkit-font-smoothing: none !important;
+  -moz-osx-font-smoothing: grayscale !important;
+  touch-action: manipulation !important;
+}
+
+/* --- SVG rendering optimization --- */
+svg {
+  mask: none !important;
+  filter: none !important;
+  color-interpolation-filters: sRGB !important;
+  mix-blend-mode: normal !important;
+}
+
+/* --- Theme variables and containment enforcement --- */
+:root {
+  --motion-scale: 0 !important;
+  --animation-speed: 0ms !important;
+  overscroll-behavior: none !important;
+}
+
+/* --- Container query disable --- */
+@supports (container-type: inline-size) {
+  * {
+    container-type: none !important;
+  }
+}
+
+/* --- Table optimization --- */
+table, tr, td {
+  border-collapse: collapse !important;
+  border-spacing: 0 !important;
+}
+
+/* --- Media optimization --- */
+audio, video {
+  pointer-events: none !important;
+}
+img {
+  -webkit-user-drag: none !important;
+  object-fit: contain !important;
+  object-position: center center !important;
+}
+
+/* --- Basic form elements: appearance and interaction reset --- */
+input, textarea,
+[class*="contextMenuNub_f1ceac"],
+[class*="attachedCaretButtonContainer_f1ceac"],
+[class*="f1ceaca61b18918e-attachedCaretButtonContainer"],
+[class*="addFriend_"],
+[class*="f1ceaca61b18918e-contextMenuNub"],
+select,
+button:not([class*="react-datepicker"], [class*="inner__02fc8"], [class*="colorPickerSwatch"], [class*="_459fb7bcd881f8d6-colorPickerSwatch"]) {
+  appearance: none !important;
+  background: none !important;
+  background-color: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+[class*="colorPickerSwatch"],
+[class*="voiceChannelHighlightGlow"],
+[class*="_459fb7bcd881f8d6-colorPickerSwatch"],
+[class*="react-datepicker"] {
+  appearance: none !important;
+  border: none !important;
+  image-rendering: pixelated !important;
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+[class*="inner__02fc8"],
+[class*="_02fc893000d95af1-inner"] {
+  appearance: none !important;
+  background-color: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+/* --- Disable embedded media elements [no iframe] --- */
+object, embed, picture, source, track {
+  pointer-events: none;
+}
+
+/* --- Limit text overflow and manage layout ellipsis --- */
+[class*="text"], [class*="content"], p, span, h1, h2, h3, h4, h5 {
+  text-overflow: ellipsis !important;
+}
+
+/* --- Remove SVG masks from avatars for faster profile picture rendering --- */
+mask {
+  mask: none !important;
+  -webkit-mask: none !important;
+}
+
+/* --- Disable GPU-heavy drop-shadows and filter-based glow effects --- */
+[class*="focusFill-"],
+[class*="shadow-"] {
+  box-shadow: none !important;
+  filter: none !important;
+}
+
+/* --- Cleans up background, borders, and shadows from key structural/stacking elements --- */
+.stack_dbd263,
+.root__6981d.flexCenter_a21736,
+.overlayContainer__2f4f7,
+.previewWrapper__48b20 {
+  background: transparent !important;
+  appearance: none !important;
+  border: none !important;
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+.privateChannelsHeaderContainer__99e7c.vc-pindms-section-container {
+  pointer-events: none !important;
+  appearance: none !important;
+  border: none !important;
+  box-shadow: none !important;
+  outline: none !important;
+  background: transparent !important;
+}
+
+/* --- Hide all activityPanels EXCEPT vc-whos-watching-screenshare --- */
+[class*="activityPanel"],
+[class*="body__5dec7"] {
+    display: none !important;
+}
+.panel__5dec7:has(.vc-whos-watching-screenshare-panel) {
+    display: block !important;
+    margin-top: -12px;
+    position: relative;
+}
+
+/* --- Strips content from small 'On Air' text badge --- */
+.live_a7acae.liveSmall_a7acae::before,
+.live_a7acae.liveSmall_a7acae::after,
+.live_a7acae.liveSmall_a7acae.eyebrow_a7acae,
+[class*="live_"] {
+    content: "" !important;
+    font-size: 0 !important;
+    line-height: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    pointer-events: none !important;
+    overflow: hidden !important;
+}
+
+/* --- Removes default OS/browser styling from items container --- */
+.itemsContainer_ef3116 {
+    appearance: none !important;
+    border: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+}
+
+/* --- Disable typing indicators to save CPU cycles on active chats --- */
+[class*="typing_"] {
+    pointer-events: none !important;
+    appearance: none !important;
+    border: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+    background: transparent !important;
+}
+
+/* --- Disable voice call UI animations and glow effects --- */
+[class*="border_"],
+[class*="voiceUser_"],
+[class*="voiceChannelHighlightGlow"] {
+    overflow: hidden !important;
+    appearance: none !important;
+    border: none !important;
+    outline: none !important;
+    background: transparent !important;
+}
+
+/* --- UI Cleanup: hide unnecessary interface elements --- */
+[aria-label*="Shop"],
+[aria-label*="Quests"]:not([class*="questify"]),
+[class*="questsIcon"],
+[class*="soundwave"],
+a[href="https://support.discord.com"],
+[class*="Help"],
+div[class*="floatingNitroUpsell__"],
+.item__58105,
+.navItemIcon__551b0,
+.icon__8a7fc,
+.live_a7acae.liveLarge_a7acae,
+.liveIndicator__30845,
+._2f4f7eb58b61c328-indicators,
+._30845ecfafc292c8-liveIndicator,
+.indicators__2f4f7 .root__14990,
+/*.indicators__2f4f7,*/
+/*[class*="liveIndicator"],*/
+/*[class*="indicators"],*/
+[class*="voiceUser"] [class*="avatarSpeaking"],
+[class*="clickable_f2170c"],
+[class*="animation_"],
+[class*="root__4ad81"],
+[aria-label*="onfetti"],
+[class*="confetti"],
+[class*="clanTagChiplet_c19a55"],
+[class*="slayerGiftingPlayingGameButton"],
+[class*="depth-"] {
+    display: none !important;
+}
+
+/* --- Hide Game Activity Icons in Voice Channels --- */
+/*
+div[class*="iconGroup__07f91"]:has([class*="gameIcon_b52e4f"]) {
+    display: none !important;
+}
+*/
+
+/* --- Restore inside Questify modal --- */
+.layer_bc663c [aria-label*="Quests"] {
+    display: revert !important;
+}
+
+/* --- Hide chat input during fullscreen DM calls --- */
+body:has(.fullScreen_cb9592) .form_f75fb0{display:none!important}
+
+/* --- Hide background SVG --- */
+svg[viewBox="0 0 1000 1000"][preserveAspectRatio="none"] {
+    display: none !important;
+}
+
+/* --- Layout Containment: Toasts, Messages & Chat --- */
+[class*="toast_"], [class*="messageListItem_"], [class*="chatContent_"] {
+  contain: layout style !important;
+}
+
+/* --- Sticker Asset Defusal --- */
+[class*="sticker_"][class*="asset_"] video {
+  display: none !important;
+}
+[class*="sticker_"][class*="asset_"] img[src*="gif"] {
+  content-visibility: hidden !important;
+}
+[class*="stickerResults_"] video {
+  display: none !important;
+}
+
+/* --- Sticker Button Suppression --- */
+button[aria-label*="Sticker"],
+[class*="stickerButton_"],
+button[class*="stickerButton"] {
+  display: none !important;
+}
+
+/* --- Message Effects Elimination --- */
+[class*="effectsWrapper_"],
+[class*="effects_"],
+[class*="messageEffects_"] {
+  display: none !important;
+}
+canvas[class*="effectsCanvas_"] {
+  display: none !important;
+}
+
+/* --- Avatar Scaling Shortcut --- */
+img[class*="avatar"] {
+  image-rendering: pixelated !important;
+}

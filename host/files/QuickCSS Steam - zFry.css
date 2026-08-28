@@ -1,0 +1,276 @@
+/* === STEAM ULTIMATE PERFORMANCE CSS: RAW UI + ZERO LATENCY - By zFrxncesck1 === */
+
+/* --- 1. GLOBAL RESET: KILL ALL VISUAL OVERHEAD --- */
+* {
+    transition: none !important;
+    scroll-behavior: auto !important;
+    backdrop-filter: none !important;
+    text-shadow: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+    outline-offset: 0 !important;
+    clip-path: none !important;
+    perspective: none !important;
+    transform-style: flat !important;
+    image-rendering: -webkit-optimize-contrast !important;
+    shape-rendering: crispEdges !important;
+    text-rendering: optimizeSpeed !important;
+    font-smooth: never !important;
+    font-kerning: none !important;
+    -webkit-font-smoothing: none !important;
+}
+
+/* --- 1b. EXCEPTION: Preserve hover screenshot animations --- */
+*:not(.hover_screenshots *) {
+  animation: none !important;
+  animation-name: none !important;
+  animation-duration: 0s !important;
+  animation-delay: 0s !important;
+  animation-iteration-count: 1 !important;
+  animation-timing-function: linear !important;
+  animation-play-state: paused !important;
+  animation-fill-mode: none !important;
+}
+
+/* --- 2. STEAM ENGINE VARIABLES --- */
+:root {
+    --motion-scale: 0 !important;
+    --animation-duration-fast: 0ms !important;
+    --animation-duration-medium: 0ms !important;
+    --animation-duration-slow: 0ms !important;
+    --frame-transparency: 1 !important;
+    --overlay-filter: none !important;
+}
+
+/* --- 3. INPUT & INTERACTION RESET --- */
+input, textarea, select, button {
+    appearance: none !important;
+}
+
+/* --- 4. TEXT SELECTION --- */
+::selection {
+    background: #444 !important;
+    color: #fff !important;
+    text-shadow: none !important;
+}
+
+/* --- 5. SCROLLBAR: MINIMALISTIC RENDERING --- */
+::-webkit-scrollbar-thumb {
+    border-radius: 0 !important;
+}
+::-webkit-scrollbar-track,
+::-webkit-scrollbar-button,
+::-webkit-scrollbar-corner {
+    display: none !important;
+}
+
+/* --- 6. LAYOUT CONTAINMENT (CRITICAL FOR PERFORMANCE) --- */
+/* Prevents Steam from re-rendering the whole window when one element changes */
+div[class*="LibraryHome"],
+div[class*="GameList"],
+div[class*="SteamDesktop"],
+div[class*="FriendsList"] {
+    contain: layout paint style !important;
+}
+
+/* --- 7. MEDIA OPTIMIZATION --- */
+audio, video {
+    pointer-events: none !important;
+}
+img {
+    -webkit-user-drag: none !important;
+    object-fit: contain !important;
+}
+
+/* --- 8. CHAT & FRIENDS LIST: STATUS INDICATORS --- */
+.ChatRoomListGroupItem_Status_Online,
+.ChatRoomListGroupItem_Status_InGame,
+.ChatRoomListGroupItem_Status_LookingToTrade,
+.AvatarStatus {
+    background-image: none !important;
+}
+
+/* --- 9. COMMUNITY & ACTIVITY FEED --- */
+[class*="EventDisplay_EventMainDetails"],
+[class*="event_Header_Background"],
+[class*="EventDetails_BlurBackground"] {
+    background-image: none !important;
+    background-color: #121212 !important;
+    filter: none !important;
+}
+
+/* --- 10. STORE: DISABLE HOVER TRANSFORMS --- */
+[class*="StoreSaleWidgetContainer"]:hover {
+    transform: none !important;
+}
+[class*="libraryhome_GameCapsule"]:hover {
+    transform: none !important;
+    filter: none !important;
+}
+
+/* --- 11. LIBRARY: GAME ENTRIES & SIDEBAR --- */
+[class*="GameListEntryContainer"] {
+    background: transparent !important;
+}
+[class*="GameListEntryContainer"] [class*="UnseenUpdateIcon"] {
+    background: #555 !important;
+}
+
+/* --- 12. INVENTORY & TRADING --- */
+.inventory_item_rarity,
+.item_rarity_color {
+    filter: none !important;
+}
+
+/* --- 13. STEAM OVERLAY (IN-GAME PERFORMANCE) --- */
+.SteamOverlayRoot,
+.OverlayMainDetail,
+[class*="GameOverlay"],
+[class*="overlay_container"],
+[class*="bottombar_BottomBarContainer"] {
+    background-color: rgba(0,0,0,0.95) !important;
+    transform: none !important;
+    opacity: 1 !important;
+}
+
+/* --- 14. LIBRARY: GLASS & REFLECTION EFFECTS --- */
+[class*="libraryhome_GlassGameGroupDisplay"] {
+    background: #101010 !important;
+}
+
+/* --- 15. NOTIFICATIONS & TOASTS --- */
+[class*="StandardNotification"],
+[class*="SteamNotificationToast"] {
+    background-color: #000 !important;
+    border: 1px solid #333 !important;
+}
+
+/* --- 16. LOADING SPINNERS: STATIC STATE --- */
+[class*="LoadingProgress"],
+[class*="SteamSpinner"],
+.throbber_container,
+[class*="loadingthrobber_Throbber"] {
+    background: #222 !important;
+}
+
+/* --- 17. TOOLTIPS & SEARCH: FORCE INSTANT AND OPAQUE --- */
+[class*="SearchSuggestion"],
+[class*="Tooltip"] {
+    opacity: 1 !important;
+}
+
+/* --- 18. CONTEXT MENUS: SOLID AND INSTANT --- */
+.ContextMenu,
+.StandardContextMenu,
+[class*="contextmenu_ContextMenu"] {
+    background: #181818 !important;
+    border: 1px solid #333 !important;
+}
+
+/* --- 19. CHAT: NEW MESSAGE INDICATOR --- */
+[class*="chat_NewMessage_Flash"] {
+    background-color: #555 !important;
+}
+
+/* --- 20. PLAY BAR BACKGROUND --- */
+[class*="playbar_PlayBar_Background"] {
+    background: #000 !important;
+}
+
+/* --- 21. GRADIENTS & SHINE REMOVAL --- */
+.btn_details_green,
+.btn_details_white,
+.header_real_estate {
+    background-image: none !important;
+}
+
+/* --- 22. STORE, PREVIEW & COMMUNITY CONTAINMENT --- */
+#infinite_scroll_container,
+.deep_dive_container,
+.marketing_message_area,
+.screenshot_preview_area,
+.artwork_preview_area {
+    contain: paint !important;
+}
+
+/* --- 23. UI CLEANUP: HIDE UNNECESSARY ELEMENTS --- */
+[class*="libraryhome_UpdatesContainer"],
+._17uEBe5Ri8TMsnfELvs8-N,
+.GPV_AnimatedBackground,
+[class*="animated_background"],
+[class*="profile_content_has_background"],
+canvas[class*="SteamCapsule"],
+.miniprofile_background_video,
+.game_page_background_video,
+.movie_ctn,
+.v6_videoplayer,
+.video_ctn,
+[class*="ChatTypingIndicator"],
+[class*="StoreBroadcast"],
+.broadcast_embed_container,
+[class*="PointsShopButton"],
+[class*="pointsshop_PointBalance"],
+[aria-label="Steam Points Shop"],
+.rewarditem_Name,
+.rewarditem_ImageContainer,
+[class*="avatar_frame"],
+[class*="AvatarFrame"],
+[class*="avatar_Frame_Container"],
+[class*="libraryhome_GameCapsuleReflection"],
+[class*="FriendStatusPulse"],
+[class*="online_FriendStatusPulse"],
+[class*="libraryhome_FriendsActivityContainer"] {
+    display: none !important;
+}
+/* --- Additional hidden elements --- */
+._2jphjrSifC6orDT4g_7Wd,           /* Wallet amount */
+/*.UkR3sY319PuaUNuUWks2K,*/            /* URL bar */
+._2Szzh5sKyGgnLUR870zbDE._5wILZhsLODVwGfcJ0hKmJ, /* Steam News button */
+._3SkuN_ykQuWGF94fclHdhJ,          /* "Add shelf" button */
+._3wJnTtcTLEp0R7eQj_mK8Y,          /* Top library header */
+._3LKQ3S_yqrebeNLF6aeiog,
+._17ewzMiLZXQiOFFbpXAZdw,
+.statusHeaderGlow,
+.nibodjvvrm86uCfnnAn4g ._3atbNcPD1_nRVTjOvryjWe,
+.ChatTabContent .avatarHolder .avatarStatus,
+.friend.quickAccessFriend .avatarHolder .avatarStatus,
+.friendListFooter,
+.friendsListSectionTitle,
+.singleWindowFocusBar.chatSingleWindowFocusBar {
+    display: none !important;
+}
+/* --- Remove shadows & borders --- */
+._28eIRmQ229ntDIyQXTn3Ub.QE3sHW9puNTAjiRDY71Xy,
+._3Z7VQ1IMk4E3HsHvrkLNgo,
+._1bGewp3tfzqAF6fVTFFUOz .UkR3sY319PuaUNuUWks2K {
+    box-shadow: none !important;
+}
+._2sYIghGVXJr6tsQVvcryy8,
+.fmLfuqm0Lxq5iPS5EHCAW,
+._1AYE16384J_ecLpN0sEYc5 {
+    border: none !important;
+}
+.u1xD3KJEgksF_J_5TLZzO,
+._2OOzYVWIHaKXm6_7sscT9i .Jbe--NUNw7sxbxGsMSjVa,
+._3lwcRYJ_r7x01Cn15bcdYI {
+    background: none !important;
+}
+/* --- Scrollbar tweaks --- */
+::-webkit-scrollbar {
+    background-color: transparent !important;
+}
+::-webkit-scrollbar-track {
+    background: transparent !important;
+}
+/* --- Miscellaneous fixes --- */
+.RGNMWtyj73_-WdhflrmuY ._2CmrnGY-Amtd83ScJkFvx2 {
+    min-height: 1px !important;
+    height: 1px !important;
+    background: none !important;
+}
+.HijmccPB1BKyhOwhX1EVl:not(._3-_jME_xsuvgT3Dvq4bw_q)+.HijmccPB1BKyhOwhX1EVl:not(._3-_jME_xsuvgT3Dvq4bw_q)::before {
+    display: none !important;
+}
+._1TdaAqMFadi0UTqilrkelR:hover:not(._2Sdix9OOEHP6z_b4W2oaU9) ._1KrJ3sFAqPBN9mfpaNTU5F {
+    color: none !important;   /* Keeps color unchanged on hover */
+}
