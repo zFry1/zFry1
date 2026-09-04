@@ -25,7 +25,6 @@
   font-kerning: none !important;
   -webkit-tap-highlight-color: transparent !important;
   will-change: auto !important;
-  isolation: auto !important;
   clear: none !important;
   font-smooth: never !important;
   image-rendering: -webkit-optimize-contrast !important;
@@ -43,6 +42,12 @@
   animation-timing-function: linear !important;
   animation-play-state: paused !important;
   animation-fill-mode: none !important;
+}
+
+
+/* --- FIX Image Import on CustomNitroWidget: Restore isolation --- */
+*:not([class*="container__70feb"]) {
+  isolation: auto !important;
 }
 
 /* --- Visual rendering: fonts, AA, text --- */
