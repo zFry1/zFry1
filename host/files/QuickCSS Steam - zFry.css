@@ -2,7 +2,6 @@
 
 /* --- 1. GLOBAL RESET: KILL ALL VISUAL OVERHEAD --- */
 * {
-    transition: none !important;
     scroll-behavior: auto !important;
     backdrop-filter: none !important;
     text-shadow: none !important;
@@ -18,6 +17,11 @@
     font-smooth: never !important;
     font-kerning: none !important;
     -webkit-font-smoothing: none !important;
+}
+
+/* --- 1a. EXCEPTION: Fix SearchSuggestion --- */
+*:not([style*="transition"]) {
+    transition: none !important;
 }
 
 /* --- 1b. EXCEPTION: Preserve hover screenshot animations --- */
@@ -272,5 +276,5 @@ canvas[class*="SteamCapsule"],
     display: none !important;
 }
 ._1TdaAqMFadi0UTqilrkelR:hover:not(._2Sdix9OOEHP6z_b4W2oaU9) ._1KrJ3sFAqPBN9mfpaNTU5F {
-    color: none !important;   /* Keeps color unchanged on hover */
+    color: none !important;        /* Keeps color unchanged on hover */
 }
