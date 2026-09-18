@@ -13,10 +13,6 @@
 /* --- GLOBAL RESET: Disable transitions, animations, visual effects, and layout complexity --- */
 * {
   transition: none !important;
-  transition-property: none !important;
-  transition-duration: 0s !important;
-  transition-delay: 0s !important;
-  transition-timing-function: linear !important;
   backdrop-filter: none !important;
   scroll-behavior: auto !important;
   scroll-snap-type: none !important;
@@ -45,13 +41,6 @@
 /* --- PICTURE IN PICTURE: Restore animation --- */
 *:not(.layerContainer__59d0d *) {
   animation: none !important;
-  animation-name: none !important;
-  animation-duration: 0s !important;
-  animation-delay: 0s !important;
-  animation-iteration-count: 1 !important;
-  animation-timing-function: linear !important;
-  animation-play-state: paused !important;
-  animation-fill-mode: none !important;
 }
 
 
@@ -62,8 +51,6 @@
 
 /* --- Visual rendering: fonts, AA, text --- */
 html {
-  text-rendering: optimizeSpeed !important;
-  font-kerning: none !important;
   -webkit-font-smoothing: none !important;
   -moz-osx-font-smoothing: grayscale !important;
   touch-action: manipulation !important;
@@ -74,7 +61,6 @@ svg {
   mask: none !important;
   filter: none !important;
   color-interpolation-filters: sRGB !important;
-  mix-blend-mode: normal !important;
 }
 
 /* --- Theme variables and containment enforcement --- */
@@ -121,7 +107,6 @@ button:not([class*="react-datepicker"], [class*="inner__02fc8"], [class*="colorP
   background-color: transparent !important;
   border: none !important;
   box-shadow: none !important;
-  outline: none !important;
 }
 
 [class*="colorPickerSwatch"],
@@ -132,7 +117,6 @@ button:not([class*="react-datepicker"], [class*="inner__02fc8"], [class*="colorP
   border: none !important;
   image-rendering: pixelated !important;
   box-shadow: none !important;
-  outline: none !important;
 }
 
 [class*="inner__02fc8"],
@@ -141,7 +125,6 @@ button:not([class*="react-datepicker"], [class*="inner__02fc8"], [class*="colorP
   background-color: transparent !important;
   border: none !important;
   box-shadow: none !important;
-  outline: none !important;
 }
 
 /* --- Disable embedded media elements [no iframe] --- */
@@ -176,7 +159,6 @@ mask {
   appearance: none !important;
   border: none !important;
   box-shadow: none !important;
-  outline: none !important;
 }
 
 .privateChannelsHeaderContainer__99e7c.vc-pindms-section-container {
@@ -184,7 +166,6 @@ mask {
   appearance: none !important;
   border: none !important;
   box-shadow: none !important;
-  outline: none !important;
   background: transparent !important;
 }
 
@@ -218,7 +199,6 @@ mask {
     appearance: none !important;
     border: none !important;
     box-shadow: none !important;
-    outline: none !important;
 }
 
 /* --- Disable typing indicators to save CPU cycles on active chats --- */
@@ -227,7 +207,6 @@ mask {
     appearance: none !important;
     border: none !important;
     box-shadow: none !important;
-    outline: none !important;
     background: transparent !important;
 }
 
@@ -238,7 +217,6 @@ mask {
     overflow: hidden !important;
     appearance: none !important;
     border: none !important;
-    outline: none !important;
     background: transparent !important;
 }
 
