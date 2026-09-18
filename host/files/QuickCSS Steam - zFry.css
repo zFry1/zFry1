@@ -17,7 +17,6 @@
     text-shadow: none !important;
     box-shadow: none !important;
     outline: none !important;
-    outline-offset: 0 !important;
     clip-path: none !important;
     perspective: none !important;
     transform-style: flat !important;
@@ -37,13 +36,6 @@
 /* --- 1b. EXCEPTION: Preserve hover screenshot animations --- */
 *:not(.hover_screenshots *) {
   animation: none !important;
-  animation-name: none !important;
-  animation-duration: 0s !important;
-  animation-delay: 0s !important;
-  animation-iteration-count: 1 !important;
-  animation-timing-function: linear !important;
-  animation-play-state: paused !important;
-  animation-fill-mode: none !important;
 }
 
 /* --- 2. STEAM ENGINE VARIABLES --- */
@@ -71,11 +63,6 @@ input, textarea, select, button {
 /* --- 5. SCROLLBAR: MINIMALISTIC RENDERING --- */
 ::-webkit-scrollbar-thumb {
     border-radius: 0 !important;
-}
-::-webkit-scrollbar-track,
-::-webkit-scrollbar-button,
-::-webkit-scrollbar-corner {
-    display: none !important;
 }
 
 /* --- 6. LAYOUT CONTAINMENT (CRITICAL FOR PERFORMANCE) --- */
@@ -253,12 +240,6 @@ canvas[class*="SteamCapsule"],
 .singleWindowFocusBar.chatSingleWindowFocusBar {
     display: none !important;
 }
-/* --- Remove shadows & borders --- */
-._28eIRmQ229ntDIyQXTn3Ub.QE3sHW9puNTAjiRDY71Xy,
-._3Z7VQ1IMk4E3HsHvrkLNgo,
-._1bGewp3tfzqAF6fVTFFUOz .UkR3sY319PuaUNuUWks2K {
-    box-shadow: none !important;
-}
 ._2sYIghGVXJr6tsQVvcryy8,
 .fmLfuqm0Lxq5iPS5EHCAW,
 ._1AYE16384J_ecLpN0sEYc5 {
@@ -272,9 +253,6 @@ canvas[class*="SteamCapsule"],
 /* --- Scrollbar tweaks --- */
 ::-webkit-scrollbar {
     background-color: transparent !important;
-}
-::-webkit-scrollbar-track {
-    background: transparent !important;
 }
 /* --- Miscellaneous fixes --- */
 .RGNMWtyj73_-WdhflrmuY ._2CmrnGY-Amtd83ScJkFvx2 {
