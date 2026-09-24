@@ -78,3 +78,11 @@
 .guildSeparator__252b6 {
     display: none;
 }
+::selection {
+    background: rgba(var(--vaccentcolor), 0.6);
+    color: rgb(var(--fontwhite1));
+}
+::-moz-selection {
+    background: rgba(var(--vaccentcolor), 0.6);
+    color: rgb(var(--fontwhite1));
+}
