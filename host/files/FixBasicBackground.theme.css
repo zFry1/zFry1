@@ -9,10 +9,9 @@
  */
 
 /* ============================================================
-   BasicBackground.css — Minimal & optimized
+   BasicBackground.css - Fixxed
    ============================================================ */
 
-/* App mount & background */
 .appMount__51fd7 {
     background: 0 0;
     background-image: var(--theme-background-image);
@@ -78,10 +77,7 @@
 .guildSeparator__252b6 {
     display: none;
 }
-::selection {
-    background: rgba(var(--vaccentcolor), 0.6);
-    color: rgb(var(--fontwhite1));
-}
+::selection,
 ::-moz-selection {
     background: rgba(var(--vaccentcolor), 0.6);
     color: rgb(var(--fontwhite1));
