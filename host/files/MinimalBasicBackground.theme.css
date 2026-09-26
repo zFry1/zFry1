@@ -1,0 +1,121 @@
+/**
+ * @name MinimalBasicBackground
+ * @author zfrancesck1
+ * @version 6.9.0
+ * @description Minimal BasicBackground theme that clears app backgrounds for custom wallpaper support.
+ * @source https://github.com/zFry1
+ * @authorId 456195985404592149
+ * @invite WhEJFWxNnX
+ */
+
+/* ============================================================
+   BasicBackground.css - Minimal
+   ============================================================ */
+
+:root {
+    --dtransparencycolor: 0,0,0;
+    --dtransparencyalpha: 0.15;
+    --dmessagetransparency: 0.5;
+    --dguildchanneltransparency: 0.15;
+    --dmemberlisttransparency: 0.0;
+    --daccentcolor: 190,78,180;
+
+    --dfont: Whitney, Helvetica Neue, Helvetica, Arial, sans-serif;
+    --dtextshadow: transparent;
+
+    --dbackground: url(https://cdn.discordapp.com/embed/avatars/0.png);
+    --dbackgroundsize: cover;
+    --dbackgroundposition: center;
+    --dblur: 0px;
+    --dbackdrop: rgba(0,0,0,0.85);
+
+    --vtransparencycolor: var(--transparencycolor, var(--dtransparencycolor));
+    --vtransparencyalpha: var(--transparencyalpha, var(--dtransparencyalpha));
+    --vmessagetransparency: var(--messagetransparency, var(--dmessagetransparency));
+    --vusechatbubbles: calc(var(--vmessagetransparency) / (var(--vmessagetransparency) + 0.00000000000000000000001));
+    --vguildchanneltransparency: var(--guildchanneltransparency, var(--dguildchanneltransparency));
+    --vmemberlisttransparency: var(--memberlistransparency, var(--dmemberlisttransparency));
+    --vaccentcolor: var(--accentcolor, var(--daccentcolor));
+    --vaccentcolor2: var(--vaccentcolor);
+    --vlinkcolor: var(--vaccentcolor);
+
+    --vfont: var(--font, var(--dfont));
+    --vtextshadow: var(--textshadow, var(--dtextshadow));
+
+    --vbackground: var(--background, var(--dbackground));
+    --vbackgroundposition: var(--backgroundposition, var(--dbackgroundposition));
+    --vbackgroundsize: var(--backgroundsize, var(--dbackgroundsize));
+    --vbackgroundblur: var(--backgroundblur, var(--dblur));
+
+    --vpopout: var(--popout, var(--vbackground));
+    --vpopoutposition: var(--popoutposition, var(--vbackgroundposition));
+    --vpopoutsize: var(--popoutsize, var(--vbackgroundsize));
+    --vpopoutblur: var(--popoutblur, var(--vbackgroundblur));
+
+    --vbackdrop: var(--backdrop, var(--dbackdrop));
+    --vbackdropposition: var(--backdropposition, var(--vbackgroundposition));
+    --vbackdropsize: var(--backdropsize, var(--vbackgroundsize));
+    --vbackdropblur: var(--backdropblur, var(--vbackgroundblur));
+
+    --fontwhite1: 255,255,255;
+    --fontwhite2: 210,210,210;
+    --fontwhite3: 170,170,170;
+    --fontwhite4: 120,120,120;
+}
+
+body::before {
+    content: "";
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: fixed;
+    background: var(--vbackground) var(--vbackgroundposition)/var(--vbackgroundsize);
+    filter: blur(var(--vbackgroundblur));
+    z-index: -1;
+}
+
+#app-mount,
+[class*="guilds_"],
+[class*="membersWrap_"] {
+    background: transparent !important;
+}
+
+#app-mount {
+    background-color: rgba(var(--vtransparencycolor), var(--vtransparencyalpha)) !important;
+}
+
+.theme-light, .theme-dark {
+    --header-primary: rgb(var(--fontwhite1));
+    --header-secondary: rgb(var(--fontwhite2));
+    --text-normal: rgb(var(--fontwhite2));
+    --text-muted: rgb(var(--fontwhite4));
+    --interactive-normal: rgb(var(--fontwhite3));
+    --interactive-hover: rgb(var(--fontwhite2));
+    --interactive-active: rgb(var(--fontwhite1));
+}
+
+.app__160d8, .bg__960e4, .wrapper_ef3116, .sidebar_c48ade:after,
+.sidebar__5e434:after, .container__2637a, .chat_f75fb0, .chatContent_f75fb0,
+.themed__9293f, .container_c8ffbb, .members_c8ffbb, .themedBackground__74017,
+.privateChannels__35e86, .privateChannels_e6b769, .scroller__99e7c,
+.children__9293f:after, .chatGradient__36d07,
+.chatTypingGradientAtBottom__36d07, .chatTypingGradientNotAtBottom__36d07,
+.tabBody__133bf, .container__133bf, .wrapper_d852db, .wrapper_fc8177,
+.standardSidebarView__23e6b, .sidebarRegionScroller__23e6b, .layer__960e4,
+.contentRegion__23e6b, .footer__4d95d, .root_bfe55a, .wrapper_cb9592,
+.callContainer_cb9592, .resizeHandle__01ae2, .container__01ae2,
+.chatLayerWrapper__01ae2, .channelChatWrapper_cb9592, .container_f369db,
+.mainCard_f369db, .container_faa96b:hover {
+    background: transparent !important;
+}
+
+::selection {
+	background: rgb(var(--vaccentcolor));
+}
+.anchor__14d82 {
+	color: rgb(var(--vaccentcolor)) !important;
+}
+.anchor__14d82::selection {
+	color: rgb(var(--fontwhite1)) !important;
+}
