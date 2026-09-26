@@ -2,7 +2,7 @@
  * @name FixBasicBackground
  * @author zfrancesck1
  * @version 6.9.0
- * @description Minimal theme that clears app backgrounds for custom wallpaper support.
+ * @description Fixxed BasicBackground theme that clears app backgrounds for custom wallpaper support.
  * @source https://github.com/zFry1
  * @authorId 456195985404592149
  * @invite WhEJFWxNnX
@@ -31,15 +31,16 @@
 .mainCard_f369db, .container_faa96b:hover {
     background: 0 0;
 }
-
 .bg__960e4 {
     background: var(--theme-transparency);
 }
+
 /*
 .panels__5e434, .channelTextArea_f75fb0 {
     background: var(--message-box-transparency);
 }
 */
+
 .wrapper_ef3116 {
     width: var(--server-listing-width);
 }
@@ -52,7 +53,6 @@
 .itemCard__7e549.wrapper__00943.outer_bf1984.padded_bf1984.interactive_bf1984 {
     background-color: initial;
 }
-
 .embedFull__623de, .container__0f2e8, .panel__5dec7 {
     background-color: initial !important;
 }
@@ -77,8 +77,6 @@
 .guildSeparator__252b6 {
     display: none;
 }
-::selection,
-::-moz-selection {
-    background: rgba(var(--vaccentcolor), 0.6);
-    color: rgb(var(--fontwhite1));
+::selection, .highlight {
+    background: rgb(var(--fontwhite1)) !important;
 }
