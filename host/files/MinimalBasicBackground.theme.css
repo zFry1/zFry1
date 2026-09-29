@@ -107,9 +107,9 @@ body::before {
 ::selection {
 	background: rgb(var(--vaccentcolor));
 }
-.anchor__14d82 {
+[class*="anchor__"] {
 	color: rgb(var(--vaccentcolor)) !important;
 }
-.anchor__14d82::selection {
+[class*="username_"]::selection, [class*="timestamp_"]::selection, [class*="anchor__"]::selection {
 	color: rgb(var(--fontwhite1)) !important;
 }
