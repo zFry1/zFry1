@@ -39,7 +39,7 @@
 }
 
 /* --- PICTURE IN PICTURE: Restore animation --- */
-*:not(.layerContainer__59d0d *) {
+*:not(.layerContainer__59d0d *):not[class*="toast_"]  {
   animation: none !important;
 }
 
