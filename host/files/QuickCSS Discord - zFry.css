@@ -38,7 +38,7 @@
   text-rendering: optimizeSpeed !important;
 }
 
-/* --- PICTURE IN PICTURE: Restore animation --- */
+/* --- PICTURE IN PICTURE & TOAST: Restore animation --- */
 *:not(.layerContainer__59d0d *):not[class*="toast_"]  {
   animation: none !important;
 }
