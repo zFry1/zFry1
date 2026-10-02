@@ -43,7 +43,6 @@
   animation: none !important;
 }
 
-
 /* --- FIX Image Import on CustomNitroWidget: Restore isolation --- */
 *:not([class*="container__70feb"]) {
   isolation: auto !important;
