@@ -39,7 +39,7 @@
 }
 
 /* --- PICTURE IN PICTURE & TOAST: Restore animation --- */
-*:not(.layerContainer__59d0d *):not[class*="toast_"]  {
+*:not(.layerContainer__59d0d *):not[class*="toast_"]:not(.lineClamp2Plus__4bd52) {
   animation: none !important;
 }
 
