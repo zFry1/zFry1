@@ -1,0 +1,6 @@
+Paths:
+%appdata%\discord
+%appdata%\discordcanary
+%appdata%\discordptb
+
+settings.json
