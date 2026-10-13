@@ -16,7 +16,6 @@
   backdrop-filter: none !important;
   scroll-behavior: auto !important;
   scroll-snap-type: none !important;
-  font-variant: normal !important;
   letter-spacing: normal !important;
   mix-blend-mode: normal !important;
   background-blend-mode: normal !important;
@@ -39,13 +38,8 @@
 }
 
 /* --- PICTURE IN PICTURE & TOAST: Restore animation --- */
-*:not(.layerContainer__59d0d *):not[class*="toast_"]:not(.lineClamp2Plus__4bd52) {
+*:not(.layerContainer__59d0d *):not([class*="toast_"]):not(.lineClamp2Plus__4bd52) {
   animation: none !important;
-}
-
-/* --- FIX Image Import on CustomNitroWidget: Restore isolation --- */
-*:not([class*="container__70feb"]) {
-  isolation: auto !important;
 }
 
 /* --- Visual rendering: fonts, AA, text --- */
@@ -80,16 +74,6 @@ svg {
 table, tr, td {
   border-collapse: collapse !important;
   border-spacing: 0 !important;
-}
-
-/* --- Media optimization --- */
-audio, video {
-  pointer-events: none !important;
-}
-img {
-  -webkit-user-drag: none !important;
-  object-fit: contain !important;
-  object-position: center center !important;
 }
 
 /* --- Basic form elements: appearance and interaction reset --- */
@@ -129,17 +113,6 @@ button:not([class*="react-datepicker"], [class*="inner__02fc8"], [class*="colorP
 /* --- Disable embedded media elements [no iframe] --- */
 object, embed, picture, source, track {
   pointer-events: none;
-}
-
-/* --- Limit text overflow and manage layout ellipsis --- */
-[class*="text"], [class*="content"], p, span, h1, h2, h3, h4, h5 {
-  text-overflow: ellipsis !important;
-}
-
-/* --- Remove SVG masks from avatars for faster profile picture rendering --- */
-mask {
-  mask: none !important;
-  -webkit-mask: none !important;
 }
 
 /* --- Disable GPU-heavy drop-shadows and filter-based glow effects --- */
@@ -184,13 +157,8 @@ mask {
 .live_a7acae.liveSmall_a7acae::after,
 .live_a7acae.liveSmall_a7acae.eyebrow_a7acae,
 [class*="live_"] {
-    content: "" !important;
     font-size: 0 !important;
-    line-height: 0 !important;
-    padding: 0 !important;
-    margin: 0 !important;
     pointer-events: none !important;
-    overflow: hidden !important;
 }
 
 /* --- Removes default OS/browser styling from items container --- */
@@ -200,22 +168,10 @@ mask {
     box-shadow: none !important;
 }
 
-/* --- Disable typing indicators to save CPU cycles on active chats --- */
-[class*="typing_"] {
-    pointer-events: none !important;
-    appearance: none !important;
-    border: none !important;
-    box-shadow: none !important;
-    background: transparent !important;
-}
-
 /* --- Disable voice call UI animations and glow effects --- */
-[class*="border_"],
 [class*="voiceUser_"],
 [class*="voiceChannelHighlightGlow"] {
-    overflow: hidden !important;
     appearance: none !important;
-    border: none !important;
     background: transparent !important;
 }
 
@@ -275,30 +231,22 @@ svg[viewBox="0 0 1000 1000"][preserveAspectRatio="none"] {
   contain: layout style !important;
 }
 
-/* --- Sticker Asset Defusal --- */
-[class*="sticker_"][class*="asset_"] video {
-  display: none !important;
-}
-[class*="sticker_"][class*="asset_"] img[src*="gif"] {
-  content-visibility: hidden !important;
-}
-[class*="stickerResults_"] video {
-  display: none !important;
+/* --- Sticker Button Suppression --- */
+[class*="buttonContainer_"]:has([class*="stickerButton_"]) {
+    display: none !important;
 }
 
-/* --- Sticker Button Suppression --- */
-button[aria-label*="Sticker"],
-[class*="stickerButton_"],
-button[class*="stickerButton"] {
+/* --- Sticker Asset Defusal --- */
+[class*="sticker_"][class*="asset_"] video,
+[class*="sticker_"][class*="asset_"] img[src*="gif"],
+[class*="stickerResults_"] video {
   display: none !important;
 }
 
 /* --- Message Effects Elimination --- */
 [class*="effectsWrapper_"],
 [class*="effects_"],
-[class*="messageEffects_"] {
-  display: none !important;
-}
+[class*="messageEffects_"],
 canvas[class*="effectsCanvas_"] {
   display: none !important;
 }
