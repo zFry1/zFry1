@@ -144,7 +144,7 @@ object, embed, picture, source, track {
 }
 
 /* --- Strips content from small 'On Air' text badge --- */
-[class*="eyebrow_"] {
+[class*="live_"] {
     font-size: 0 !important;
     pointer-events: none !important;
 }
