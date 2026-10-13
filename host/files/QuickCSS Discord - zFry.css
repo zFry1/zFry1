@@ -25,7 +25,6 @@
   text-decoration-skip-ink: none !important;
   hyphens: none !important;
   text-shadow: none !important;
-  clip-path: none !important;
   text-emphasis: none !important;
   font-kerning: none !important;
   -webkit-tap-highlight-color: transparent !important;
@@ -51,7 +50,6 @@ html {
 
 /* --- SVG rendering optimization --- */
 svg {
-  mask: none !important;
   filter: none !important;
   color-interpolation-filters: sRGB !important;
 }
@@ -61,13 +59,6 @@ svg {
   --motion-scale: 0 !important;
   --animation-speed: 0ms !important;
   overscroll-behavior: none !important;
-}
-
-/* --- Container query disable --- */
-@supports (container-type: inline-size) {
-  * {
-    container-type: none !important;
-  }
 }
 
 /* --- Table optimization --- */
@@ -226,8 +217,8 @@ svg[viewBox="0 0 1000 1000"][preserveAspectRatio="none"] {
     display: none !important;
 }
 
-/* --- Layout Containment: Toasts, Messages & Chat --- */
-[class*="toast_"], [class*="messageListItem_"], [class*="chatContent_"] {
+/* --- Layout Containment: Messages--- */
+[class*="messageListItem_"] {
   contain: layout style !important;
 }
 
