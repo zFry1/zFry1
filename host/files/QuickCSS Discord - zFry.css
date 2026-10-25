@@ -144,13 +144,8 @@ object, embed, picture, source, track {
 }
 
 /* --- Strips content from small 'On Air' text badge --- */
-div[class*="iconGroup__"] [class*="badge__"],
-[class*="live_"] {
-    font-size: 0 !important;
-    pointer-events: none !important;
-}
-.label_c2b88c {
-  visibility: hidden !important;
+div[class*="stream"] .label_c2b88c,
+div[class*="iconGroup__"] .label_c2b88c {
   width: 0 !important;
   overflow: hidden !important;
   pointer-events: none !important;
