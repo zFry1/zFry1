@@ -167,7 +167,7 @@ div[class*="iconGroup__"] .label_c2b88c {
 
 /* --- UI Cleanup: hide unnecessary interface elements --- */
 [aria-label*="Shop"],
-[aria-label*="Quests"]:not([class*="questify"]),
+[aria-label*="Quests"]:not([class*="questify"]):not([class*="circleIconButton"]),
 [class*="questsIcon"],
 [class*="soundwave"],
 a[href="https://support.discord.com"],
