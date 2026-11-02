@@ -218,11 +218,6 @@ svg[viewBox="0 0 1000 1000"][preserveAspectRatio="none"] {
     display: none !important;
 }
 
-/* --- Layout Containment: Messages--- */
-[class*="messageListItem_"] {
-  contain: layout style !important;
-}
-
 /* --- Sticker Button Suppression --- */
 [class*="buttonContainer_"]:has([class*="stickerButton_"]) {
     display: none !important;
