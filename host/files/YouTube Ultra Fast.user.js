@@ -6,6 +6,7 @@
 // @author       zFrxncesck1
 // @icon         https://lh3.googleusercontent.com/WmYTd_OV6T02spKBkBFb7HzSDshWEBshMFo_ji3zJasoLQCrN0w3PPDi2511Qf7yFcvpU3qBOAow0KfT_Vq47_WW=s60
 // @match        *://*.youtube.com/*
+// @noframes
 // @grant        GM_addStyle
 // @run-at       document-start
 // ==/UserScript==
@@ -146,12 +147,7 @@
             display: none !important;
         }
 
-        /* Hide specific buttons (main UI & Shorts) */
-        .yt-spec-button-shape-next.yt-spec-button-shape-next--tonal.yt-spec-button-shape-next--overlay.yt-spec-button-shape-next--size-m.yt-spec-button-shape-next--icon-leading.yt-spec-button-shape-next--enable-backdrop-filter-experiment,
-        .ytd-shorts-player-controls .yt-spec-button-shape-next--overlay, .ytp-gradient-bottom, .ytp-placeholder,
-        .ytd-shorts-player-controls #navigation-buttons {
-            display: none !important;
-        }
+
 
         /* Keep dialog/popup backgrounds opaque */
         #dialog .yt-spec-dialog-modal__backdrop, .ytp-popup, ytd-menu-popup-renderer, ytd-multi-page-menu-renderer {
