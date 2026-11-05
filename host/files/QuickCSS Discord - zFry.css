@@ -27,10 +27,7 @@
   text-shadow: none !important;
   text-emphasis: none !important;
   font-kerning: none !important;
-  -webkit-tap-highlight-color: transparent !important;
   will-change: auto !important;
-  clear: none !important;
-  font-smooth: never !important;
   image-rendering: -webkit-optimize-contrast !important;
   shape-rendering: crispEdges !important;
   text-rendering: optimizeSpeed !important;
@@ -39,13 +36,6 @@
 /* --- PICTURE IN PICTURE & TOAST: Restore animation --- */
 *:not(.layerContainer__59d0d *):not([class*="toast_"]):not(.lineClamp2Plus__4bd52) {
   animation: none !important;
-}
-
-/* --- Visual rendering: fonts, AA, text --- */
-html {
-  -webkit-font-smoothing: none !important;
-  -moz-osx-font-smoothing: grayscale !important;
-  touch-action: manipulation !important;
 }
 
 /* --- SVG rendering optimization --- */
@@ -59,12 +49,6 @@ svg {
   --motion-scale: 0 !important;
   --animation-speed: 0ms !important;
   overscroll-behavior: none !important;
-}
-
-/* --- Table optimization --- */
-table, tr, td {
-  border-collapse: collapse !important;
-  border-spacing: 0 !important;
 }
 
 /* --- Basic form elements: appearance and interaction reset --- */
@@ -82,7 +66,6 @@ button:not([class*="react-datepicker"], [class*="inner__02fc8"], [class*="colorP
   border: none !important;
   box-shadow: none !important;
 }
-
 [class*="colorPickerSwatch"],
 [class*="voiceChannelHighlightGlow"],
 [class*="_459fb7bcd881f8d6-colorPickerSwatch"],
@@ -92,7 +75,6 @@ button:not([class*="react-datepicker"], [class*="inner__02fc8"], [class*="colorP
   image-rendering: pixelated !important;
   box-shadow: none !important;
 }
-
 [class*="inner__02fc8"],
 [class*="_02fc893000d95af1-inner"] {
   appearance: none !important;
@@ -102,7 +84,7 @@ button:not([class*="react-datepicker"], [class*="inner__02fc8"], [class*="colorP
 }
 
 /* --- Disable embedded media elements [no iframe] --- */
-object, embed, picture, source, track {
+object, embed, source, track {
   pointer-events: none;
 }
 
@@ -123,7 +105,6 @@ object, embed, picture, source, track {
   border: none !important;
   box-shadow: none !important;
 }
-
 .privateChannelsHeaderContainer__99e7c.vc-pindms-section-container {
   pointer-events: none !important;
   appearance: none !important;
@@ -135,17 +116,17 @@ object, embed, picture, source, track {
 /* --- Hide all activityPanels EXCEPT vc-whos-watching-screenshare --- */
 [class*="activityPanel"],
 [class*="body__5dec7"] {
-    display: none !important;
+  display: none !important;
 }
 .panel__5dec7:has(.vc-whos-watching-screenshare-panel) {
-    display: block !important;
-    margin-top: -12px;
-    position: relative;
+  display: block !important;
+  margin-top: -12px;
+  position: relative;
 }
 
 /* --- Strips content from small 'On Air' text badge --- */
-div[class*="stream"] .label_c2b88c,
-div[class*="iconGroup__"] .label_c2b88c {
+div[class*="stream"] .label_c2b88c, div[class*="iconGroup_"] .label_c2b88c,
+div[class*="stream"] .label_4guu7-, div[class*="iconGroup_"] .label_4guu7- {
   width: 0 !important;
   overflow: hidden !important;
   pointer-events: none !important;
@@ -153,16 +134,16 @@ div[class*="iconGroup__"] .label_c2b88c {
 
 /* --- Removes default OS/browser styling from items container --- */
 .itemsContainer_ef3116 {
-    appearance: none !important;
-    border: none !important;
-    box-shadow: none !important;
+  appearance: none !important;
+  border: none !important;
+  box-shadow: none !important;
 }
 
 /* --- Disable voice call UI animations and glow effects --- */
 [class*="voiceUser_"],
 [class*="voiceChannelHighlightGlow"] {
-    appearance: none !important;
-    background: transparent !important;
+  appearance: none !important;
+  background: transparent !important;
 }
 
 /* --- UI Cleanup: hide unnecessary interface elements --- */
@@ -175,17 +156,17 @@ a[href="https://support.discord.com"],
 div[class*="floatingNitroUpsell__"],
 .newBadge__4ed1a,
 [class*="marketingButtonBackgroundNew_"],
-.item__58105,
+.wrapper__58105,
+.wrapper__o8_Xq,
+.container__76394,
 .navItemIcon__551b0,
+.premiumTrialBadge__4c1e4,
 .icon__8a7fc,
 .live_a7acae.liveLarge_a7acae,
 .liveIndicator__30845,
 ._2f4f7eb58b61c328-indicators,
 ._30845ecfafc292c8-liveIndicator,
 .indicators__2f4f7 .root__14990,
-/*.indicators__2f4f7,*/
-/*[class*="liveIndicator"],*/
-/*[class*="indicators"],*/
 [class*="voiceUser"] [class*="avatarSpeaking"],
 [class*="clickable_f2170c"],
 [class*="animation_"],
@@ -195,32 +176,27 @@ div[class*="floatingNitroUpsell__"],
 [class*="clanTagChiplet_c19a55"],
 [class*="slayerGiftingPlayingGameButton"],
 [class*="depth-"] {
-    display: none !important;
+  display: none !important;
 }
-
-/* --- Hide Game Activity Icons in Voice Channels --- */
-/*
-div[class*="iconGroup__07f91"]:has([class*="gameIcon_b52e4f"]) {
-    display: none !important;
-}
-*/
 
 /* --- Restore inside Questify modal --- */
 .layer_bc663c [aria-label*="Quests"] {
-    display: revert !important;
+  display: revert !important;
 }
 
 /* --- Hide chat input during fullscreen DM calls --- */
-body:has(.fullScreen_cb9592) .form_f75fb0{display:none!important}
+body:has(.fullScreen_cb9592) .form_f75fb0 {
+  display:none!important;
+}
 
 /* --- Hide background SVG --- */
 svg[viewBox="0 0 1000 1000"][preserveAspectRatio="none"] {
-    display: none !important;
+  display: none !important;
 }
 
 /* --- Sticker Button Suppression --- */
 [class*="buttonContainer_"]:has([class*="stickerButton_"]) {
-    display: none !important;
+  display: none !important;
 }
 
 /* --- Sticker Asset Defusal --- */
