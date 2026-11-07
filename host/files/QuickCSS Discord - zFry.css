@@ -83,11 +83,6 @@ button:not([class*="react-datepicker"], [class*="inner__02fc8"], [class*="colorP
   box-shadow: none !important;
 }
 
-/* --- Disable embedded media elements [no iframe] --- */
-object, embed, source, track {
-  pointer-events: none;
-}
-
 /* --- Disable GPU-heavy drop-shadows and filter-based glow effects --- */
 [class*="focusFill-"],
 [class*="shadow-"] {
@@ -106,7 +101,6 @@ object, embed, source, track {
   box-shadow: none !important;
 }
 .privateChannelsHeaderContainer__99e7c.vc-pindms-section-container {
-  pointer-events: none !important;
   appearance: none !important;
   border: none !important;
   box-shadow: none !important;
@@ -125,11 +119,10 @@ object, embed, source, track {
 }
 
 /* --- Strips content from small 'On Air' text badge --- */
-div[class*="stream"] .label_c2b88c, div[class*="iconGroup_"] .label_c2b88c,
-div[class*="stream"] .label_4guu7-, div[class*="iconGroup_"] .label_4guu7- {
+:is(div[class*="stream"], div[class*="iconGroup_"])
+  :is(.label_c2b88c, .label_4guu7-) {
   width: 0 !important;
   overflow: hidden !important;
-  pointer-events: none !important;
 }
 
 /* --- Removes default OS/browser styling from items container --- */
@@ -186,8 +179,8 @@ span[class*="messageChipletContainerInner"],
 }
 
 /* --- Hide chat input during fullscreen DM calls --- */
-body:has(.fullScreen_cb9592) .form_f75fb0 {
-  display:none!important;
+body:has([class*="fullScreen_"]) :is(.form_z_gUBg, .form_f75fb0) {
+  display: none !important;
 }
 
 /* --- Hide background SVG --- */
@@ -201,8 +194,7 @@ svg[viewBox="0 0 1000 1000"][preserveAspectRatio="none"] {
 }
 
 /* --- Sticker Asset Defusal --- */
-[class*="sticker_"][class*="asset_"] video,
-[class*="sticker_"][class*="asset_"] img[src*="gif"],
+[class*="sticker_"][class*="asset_"] :is(video, img[src*="gif"]),
 [class*="stickerResults_"] video {
   display: none !important;
 }
