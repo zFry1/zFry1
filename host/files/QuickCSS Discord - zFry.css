@@ -34,7 +34,7 @@
 }
 
 /* --- PICTURE IN PICTURE & TOAST: Restore animation --- */
-*:not(.layerContainer__59d0d *):not([class*="toast_"]):not(.lineClamp2Plus__4bd52) {
+*:not([class*="layerContainer_"] *):not([class*="toast_"]):not([class*="lineClamp_"]) {
   animation: none !important;
 }
 
@@ -51,38 +51,6 @@ svg {
   overscroll-behavior: none !important;
 }
 
-/* --- Basic form elements: appearance and interaction reset --- */
-input, textarea,
-[class*="contextMenuNub_f1ceac"],
-[class*="attachedCaretButtonContainer_f1ceac"],
-[class*="f1ceaca61b18918e-attachedCaretButtonContainer"],
-[class*="addFriend_"],
-[class*="f1ceaca61b18918e-contextMenuNub"],
-select,
-button:not([class*="react-datepicker"], [class*="inner__02fc8"], [class*="colorPickerSwatch"], [class*="_459fb7bcd881f8d6-colorPickerSwatch"]) {
-  appearance: none !important;
-  background: none !important;
-  background-color: transparent !important;
-  border: none !important;
-  box-shadow: none !important;
-}
-[class*="colorPickerSwatch"],
-[class*="voiceChannelHighlightGlow"],
-[class*="_459fb7bcd881f8d6-colorPickerSwatch"],
-[class*="react-datepicker"] {
-  appearance: none !important;
-  border: none !important;
-  image-rendering: pixelated !important;
-  box-shadow: none !important;
-}
-[class*="inner__02fc8"],
-[class*="_02fc893000d95af1-inner"] {
-  appearance: none !important;
-  background-color: transparent !important;
-  border: none !important;
-  box-shadow: none !important;
-}
-
 /* --- Disable GPU-heavy drop-shadows and filter-based glow effects --- */
 [class*="focusFill-"],
 [class*="shadow-"] {
@@ -90,32 +58,63 @@ button:not([class*="react-datepicker"], [class*="inner__02fc8"], [class*="colorP
   filter: none !important;
 }
 
-/* --- Cleans up background, borders, and shadows from key structural/stacking elements --- */
+/* --- Appearance, border and shadow reset: form elements, color pickers, switches, structural/stacking elements, items container --- */
+/* Basic form elements */
+input, textarea,
+[class*="contextMenuNub_f1ceac"],
+[class*="attachedCaretButtonContainer_f1ceac"],
+[class*="f1ceaca61b18918e-attachedCaretButtonContainer"],
+[class*="addFriend_"],
+[class*="f1ceaca61b18918e-contextMenuNub"],
+select,
+button:not([class*="react-datepicker"], [class*="inner__02fc8"], [class*="colorPickerSwatch"], [class*="_459fb7bcd881f8d6-colorPickerSwatch"]),
+/* Color pickers, glow and datepicker */
+[class*="colorPickerSwatch"],
+[class*="voiceChannelHighlightGlow"],
+[class*="_459fb7bcd881f8d6-colorPickerSwatch"],
+[class*="react-datepicker"],
+/* Switch inner */
+[class*="inner__02fc8"],
+[class*="_02fc893000d95af1-inner"],
+/* Key structural/stacking elements */
 .stack_dbd263,
 .root__6981d.flexCenter_a21736,
 .overlayContainer__2f4f7,
-.previewWrapper__48b20 {
-  background: transparent !important;
+.previewWrapper__48b20,
+.privateChannelsHeaderContainer__99e7c.vc-pindms-section-container,
+/* Items container */
+.itemsContainer_ef3116 {
   appearance: none !important;
   border: none !important;
   box-shadow: none !important;
-}
-.privateChannelsHeaderContainer__99e7c.vc-pindms-section-container {
-  appearance: none !important;
-  border: none !important;
-  box-shadow: none !important;
-  background: transparent !important;
 }
 
-/* --- Hide all activityPanels EXCEPT vc-whos-watching-screenshare --- */
-[class*="activityPanel"],
-[class*="body__5dec7"] {
-  display: none !important;
+/* --- Transparent backgrounds: form elements, structural/stacking elements, voice call UI --- */
+input, textarea,
+[class*="contextMenuNub_f1ceac"],
+[class*="attachedCaretButtonContainer_f1ceac"],
+[class*="f1ceaca61b18918e-attachedCaretButtonContainer"],
+[class*="addFriend_"],
+[class*="f1ceaca61b18918e-contextMenuNub"],
+select,
+button:not([class*="react-datepicker"], [class*="inner__02fc8"], [class*="colorPickerSwatch"], [class*="_459fb7bcd881f8d6-colorPickerSwatch"]),
+.stack_dbd263,
+.root__6981d.flexCenter_a21736,
+.overlayContainer__2f4f7,
+.previewWrapper__48b20,
+.privateChannelsHeaderContainer__99e7c.vc-pindms-section-container,
+[class*="voiceUser_"],
+[class*="voiceChannelHighlightGlow"] {
+  background: transparent !important;
 }
-.panel__5dec7:has(.vc-whos-watching-screenshare-panel) {
-  display: block !important;
-  margin-top: -12px;
-  position: relative;
+[class*="inner__02fc8"],
+[class*="_02fc893000d95af1-inner"] {
+  background-color: transparent !important;
+}
+
+/* --- Pixelated rendering: avatars --- */
+img[class*="avatar"] {
+  image-rendering: pixelated !important;
 }
 
 /* --- Strips content from small 'On Air' text badge --- */
@@ -125,25 +124,11 @@ button:not([class*="react-datepicker"], [class*="inner__02fc8"], [class*="colorP
   overflow: hidden !important;
 }
 
-/* --- Removes default OS/browser styling from items container --- */
-.itemsContainer_ef3116 {
-  appearance: none !important;
-  border: none !important;
-  box-shadow: none !important;
-}
-
-/* --- Disable voice call UI animations and glow effects --- */
-[class*="voiceUser_"],
-[class*="voiceChannelHighlightGlow"] {
-  appearance: none !important;
-  background: transparent !important;
-}
-
-/* --- UI Cleanup: hide unnecessary interface elements --- */
-[aria-label*="Shop"],
-[aria-label*="Quests"]:not([class*="questify"]):not([class*="circleIconButton"]),
-[class*="questsIcon"],
-[class*="soundwave"],
+/* --- Hide: activityPanels, UI cleanup, fullscreen call input, background SVG, stickers, message effects, empty call tile --- */
+/* Hide all activityPanels EXCEPT vc-whos-watching-screenshare */
+[class*="activityPanel"],
+[class*="body__5dec7"],
+/* UI Cleanup: hide unnecessary interface elements */
 a[href="https://support.discord.com"],
 [class*="Help"],
 div[class*="floatingNitroUpsell__"],
@@ -169,45 +154,29 @@ div[class*="floatingNitroUpsell__"],
 [class*="clanTagChiplet_c19a55"],
 span[class*="messageChipletContainerInner"],
 [class*="slayerGiftingPlayingGameButton"],
-[class*="depth-"] {
-  display: none !important;
-}
-
-/* --- Restore inside Questify modal --- */
-.layer_bc663c [aria-label*="Quests"] {
-  display: revert !important;
-}
-
-/* --- Hide chat input during fullscreen DM calls --- */
-body:has([class*="fullScreen_"]) [class*="form_"] {
-  display: none !important;
-}
-
-/* --- Hide background SVG --- */
-svg[viewBox="0 0 1000 1000"][preserveAspectRatio="none"] {
-  display: none !important;
-}
-
-/* --- Sticker Button Suppression --- */
-[class*="buttonContainer_"]:has([class*="stickerButton_"]) {
-  display: none !important;
-}
-
-/* --- Sticker Asset Defusal --- */
+[class*="depth-"],
+/* Hide chat input during fullscreen DM calls */
+body:has([class*="fullScreen_"]) [class*="form_"],
+/* Hide background SVG */
+svg[viewBox="0 0 1000 1000"][preserveAspectRatio="none"],
+/* Sticker Button Suppression */
+[class*="buttonContainer_"]:has([class*="stickerButton_"]),
+/* Sticker Asset Defusal */
 [class*="sticker_"][class*="asset_"] :is(video, img[src*="gif"]),
-[class*="stickerResults_"] video {
-  display: none !important;
-}
-
-/* --- Message Effects Elimination --- */
+[class*="stickerResults_"] video,
+/* Message Effects Elimination */
 [class*="effectsWrapper_"],
 [class*="effects_"],
 [class*="messageEffects_"],
-canvas[class*="effectsCanvas_"] {
+canvas[class*="effectsCanvas_"],
+/* Hide empty call tile (invite/activity placeholder) */
+[class*="tile_"]:has(img[alt=""][src*="/assets/"]):not(:has(video)) {
   display: none !important;
 }
 
-/* --- Avatar Scaling Shortcut --- */
-img[class*="avatar"] {
-  image-rendering: pixelated !important;
+/* --- Restore: activityPanel with vc-whos-watching-screenshare --- */
+.panel__5dec7:has(.vc-whos-watching-screenshare-panel) {
+  display: block !important;
+  margin-top: -12px;
+  position: relative;
 }
