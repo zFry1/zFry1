@@ -179,7 +179,7 @@ span[class*="messageChipletContainerInner"],
 }
 
 /* --- Hide chat input during fullscreen DM calls --- */
-body:has([class*="fullScreen_"]) :is(.form_z_gUBg, .form_f75fb0) {
+body:has([class*="fullScreen_"]) [class*="form_"] {
   display: none !important;
 }
 
