@@ -34,14 +34,8 @@
 }
 
 /* --- PICTURE IN PICTURE & TOAST: Restore animation --- */
-*:not([class*="layerContainer_"] *):not([class*="toast_"]):not([class*="lineClamp_"]) {
+*:not( [class*="focusLock_"] div):not([class*="toast_"]):not([class*="lineClamp_"]) {
   animation: none !important;
-}
-
-/* --- SVG rendering optimization --- */
-svg {
-  filter: none !important;
-  color-interpolation-filters: sRGB !important;
 }
 
 /* --- Theme variables and containment enforcement --- */
@@ -60,56 +54,28 @@ svg {
 
 /* --- Appearance, border and shadow reset: form elements, color pickers, switches, structural/stacking elements, items container --- */
 /* Basic form elements */
-input, textarea,
-[class*="contextMenuNub_f1ceac"],
-[class*="attachedCaretButtonContainer_f1ceac"],
-[class*="f1ceaca61b18918e-attachedCaretButtonContainer"],
+[class*="contextMenuNub_"],
+[class*="attachedCaretButtonContainer_"],
 [class*="addFriend_"],
-[class*="f1ceaca61b18918e-contextMenuNub"],
-select,
-button:not([class*="react-datepicker"], [class*="inner__02fc8"], [class*="colorPickerSwatch"], [class*="_459fb7bcd881f8d6-colorPickerSwatch"]),
+button:not([class*="react-datepicker"], [class*="colorPickerSwatch"]),
 /* Color pickers, glow and datepicker */
 [class*="colorPickerSwatch"],
 [class*="voiceChannelHighlightGlow"],
-[class*="_459fb7bcd881f8d6-colorPickerSwatch"],
 [class*="react-datepicker"],
-/* Switch inner */
-[class*="inner__02fc8"],
-[class*="_02fc893000d95af1-inner"],
 /* Key structural/stacking elements */
-.stack_dbd263,
-.root__6981d.flexCenter_a21736,
-.overlayContainer__2f4f7,
-.previewWrapper__48b20,
-.privateChannelsHeaderContainer__99e7c.vc-pindms-section-container,
-/* Items container */
-.itemsContainer_ef3116 {
+.vc-pindms-section-container {
   appearance: none !important;
   border: none !important;
   box-shadow: none !important;
 }
 
 /* --- Transparent backgrounds: form elements, structural/stacking elements, voice call UI --- */
-input, textarea,
-[class*="contextMenuNub_f1ceac"],
-[class*="attachedCaretButtonContainer_f1ceac"],
-[class*="f1ceaca61b18918e-attachedCaretButtonContainer"],
+button:not([class*="react-datepicker"], [class*="colorPickerSwatch"]),
+[class*="contextMenuNub_"],
 [class*="addFriend_"],
-[class*="f1ceaca61b18918e-contextMenuNub"],
-select,
-button:not([class*="react-datepicker"], [class*="inner__02fc8"], [class*="colorPickerSwatch"], [class*="_459fb7bcd881f8d6-colorPickerSwatch"]),
-.stack_dbd263,
-.root__6981d.flexCenter_a21736,
-.overlayContainer__2f4f7,
-.previewWrapper__48b20,
-.privateChannelsHeaderContainer__99e7c.vc-pindms-section-container,
 [class*="voiceUser_"],
 [class*="voiceChannelHighlightGlow"] {
   background: transparent !important;
-}
-[class*="inner__02fc8"],
-[class*="_02fc893000d95af1-inner"] {
-  background-color: transparent !important;
 }
 
 /* --- Pixelated rendering: avatars --- */
@@ -118,8 +84,7 @@ img[class*="avatar"] {
 }
 
 /* --- Strips content from small 'On Air' text badge --- */
-:is(div[class*="stream"], div[class*="iconGroup_"])
-  :is(.label_c2b88c, .label_4guu7-) {
+:is(div[class*="stream"], div[class*="iconGroup_"]) [class*="label_"] {
   width: 0 !important;
   overflow: hidden !important;
 }
@@ -127,27 +92,17 @@ img[class*="avatar"] {
 /* --- Hide: activityPanels, UI cleanup, fullscreen call input, background SVG, stickers, message effects, empty call tile --- */
 /* Hide all activityPanels EXCEPT vc-whos-watching-screenshare */
 [class*="activityPanel"],
-[class*="body__5dec7"],
+[class*="activityPanel"] [class*="body_"],
 /* UI Cleanup: hide unnecessary interface elements */
 a[href="https://support.discord.com"],
-[class*="Help"],
 div[class*="floatingNitroUpsell__"],
-.newBadge__4ed1a,
 [class*="marketingButtonBackgroundNew_"],
-.wrapper__58105,
-.wrapper__o8_Xq,
-.container__76394,
-.navItemIcon__551b0,
-.premiumTrialBadge__4c1e4,
-.icon__8a7fc,
-.liveIndicator__be5Bx,
+[class*="listItem_"] > [class*="wrapper_"],
+[class*="streamQualityIndicator_"] [class*="liveIndicator_"],
 [class*="voiceUser"] [class*="avatarSpeaking"],
-[class*="clickable_f2170c"],
 [class*="animation_"],
-[class*="root__4ad81"],
 [aria-label*="onfetti"],
 [class*="confetti"],
-[class*="clanTagChiplet_c19a55"],
 span[class*="messageChipletContainerInner"],
 [class*="slayerGiftingPlayingGameButton"],
 [class*="depth-"],
@@ -171,7 +126,7 @@ canvas[class*="effectsCanvas_"],
 }
 
 /* --- Restore: activityPanel with vc-whos-watching-screenshare --- */
-.panel__5dec7:has(.vc-whos-watching-screenshare-panel) {
+[class*="activityPanel"] [class*="panel_"]:has(.vc-whos-watching-screenshare-panel) {
   display: block !important;
   margin-top: -12px;
   position: relative;
